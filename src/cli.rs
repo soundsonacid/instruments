@@ -15,14 +15,13 @@ where
             .expect("No config path provided for config operation");
 
         let config = config::Config::builder()
-            .add_source(config::File::new(&fp, config::FileFormat::Yaml))
+            .add_source(config::File::new(fp, config::FileFormat::Yaml))
             .build()
             .expect("Failed to build config");
-        return config
+        config
             .try_deserialize::<T>()
-            .expect("Failed to deserialize config");
+            .expect("Failed to deserialize config")
     } else {
-        let args = T::parse();
-        return args;
+        T::parse()
     }
 }

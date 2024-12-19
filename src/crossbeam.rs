@@ -55,7 +55,7 @@ impl<T> Clone for Listener<T> {
     }
 }
 
-pub(crate) enum NotifierStatus {
+pub enum NotifierStatus {
     Notified,
     DidNotNotify,
 }
