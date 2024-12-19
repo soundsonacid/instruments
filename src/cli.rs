@@ -13,6 +13,7 @@ where
         let fp = args
             .get(config_pos + 1)
             .expect("No config path provided for config operation");
+
         let config = config::Config::builder()
             .add_source(config::File::new(&fp, config::FileFormat::Yaml))
             .build()

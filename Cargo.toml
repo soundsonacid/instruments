@@ -8,5 +8,6 @@ edition = "2021"
 [dependencies]
 clap = "4.5.8"
 config = "0.14.0"
+crossbeam-channel = "0.5.13"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.39.3", features = ["full"] }
